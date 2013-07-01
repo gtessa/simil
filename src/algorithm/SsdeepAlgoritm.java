@@ -3,6 +3,8 @@ package algorithm;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import algorithm.base.BaseSimilarityAlgorithm;
+
 import com.fastlink2.ssdeep.SpamSumSignature;
 import com.fastlink2.ssdeep.Ssdeep;
 

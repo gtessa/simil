@@ -1,4 +1,4 @@
-package algorithm;
+package com.aneurone.simhash;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

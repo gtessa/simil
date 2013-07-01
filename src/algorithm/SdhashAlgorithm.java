@@ -3,6 +3,8 @@ package algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
+import algorithm.base.BaseSimilarityAlgorithm;
+
 import com.devdaily.system.SystemCommandExecutor;
 
 public class SdhashAlgorithm extends BaseSimilarityAlgorithm {

@@ -1,5 +1,7 @@
 package algorithm;
 
+import algorithm.base.BaseSimilarityAlgorithm;
+
 public abstract class StringSimilarityAlgorithm extends BaseSimilarityAlgorithm {
 
 	protected String str1, str2;

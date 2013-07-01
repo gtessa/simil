@@ -2,10 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import algorithm.BaseSimilarityAlgorithm;
 import algorithm.LcsStringAlgorithm;
 import algorithm.SimHashAlgorithm;
 import algorithm.SsdeepAlgoritm;
+import algorithm.base.BaseSimilarityAlgorithm;
 
 
 public class Main {

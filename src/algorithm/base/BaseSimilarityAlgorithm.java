@@ -1,4 +1,5 @@
-package algorithm;
+package algorithm.base;
+
 
 public abstract class BaseSimilarityAlgorithm implements SimilarityAlgorithm {
 

@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.aneurone.simhash.SimHash;
+
 public class SimHashAlgorithm extends StringSimilarityAlgorithm {
 
 	public SimHashAlgorithm(String str1, String str2) {
@@ -19,6 +21,7 @@ public class SimHashAlgorithm extends StringSimilarityAlgorithm {
 		Map<String,Integer> wordsMap1 = new HashMap<String,Integer>(); 
 		String[] wordsStr1 = str1.split("\\s+");
 		for (String w : wordsStr1) {
+			w = w.replaceAll("[^\\w]", "");
 			Integer count = wordsMap1.get(w);
 			if (count == null) {
 				count = new Integer(0);
@@ -30,6 +33,7 @@ public class SimHashAlgorithm extends StringSimilarityAlgorithm {
 		Map<String,Integer> wordsMap2 = new HashMap<String,Integer>(); 
 		String[] wordsStr2 = str2.split("\\s+");
 		for (String w : wordsStr2) {
+			w = w.replaceAll("[^\\w]", "");
 			Integer count = wordsMap2.get(w);
 			if (count == null) {
 				count = new Integer(0);
