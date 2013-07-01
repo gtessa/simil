@@ -348,7 +348,21 @@ public class Ssdeep {
      * @return
      * @throws IOException
      */
-    public String fuzzy_hash_file(File file) throws IOException
+    public String fuzzy_hash_file_s(File file) throws IOException
+    {
+        return fuzzy_hash_file(file).toString();
+    }
+    
+    /**
+     * fuzzy_hash_file
+     * 
+     * Calculates the SpamSum hash for specified file
+     * 
+     * @param file - file to be hashed
+     * @return
+     * @throws IOException
+     */
+    public SpamSumSignature fuzzy_hash_file(File file) throws IOException
     {
         RandomAccessFile stream = new RandomAccessFile(file, "r");
         if (null == stream)
@@ -378,10 +392,16 @@ public class Ssdeep {
         }
 
         stream.seek(filepos);
-        return ctx.signature.toString();
+        return ctx.signature;
     }
     
-    public String fuzzy_hash_file(String file) throws FileNotFoundException, IOException
+    public String fuzzy_hash_file_s(String file) throws FileNotFoundException, IOException
+    {
+        File f = new File(file);
+        return this.fuzzy_hash_file_s(f);
+    }
+    
+    public SpamSumSignature fuzzy_hash_file(String file) throws FileNotFoundException, IOException
     {
         File f = new File(file);
         return this.fuzzy_hash_file(f);

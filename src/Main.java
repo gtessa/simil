@@ -5,6 +5,7 @@ import java.io.IOException;
 import algorithm.BaseSimilarityAlgorithm;
 import algorithm.LcsStringAlgorithm;
 import algorithm.SimHashAlgorithm;
+import algorithm.SsdeepAlgoritm;
 
 
 public class Main {
@@ -19,8 +20,10 @@ public class Main {
 			String str2 = fileToString(args[1]);
 			BaseSimilarityAlgorithm sim = new LcsStringAlgorithm(str1, str2);
 			BaseSimilarityAlgorithm simHash = new SimHashAlgorithm(str1, str2);
-			System.out.println("Similaridade: " + sim.similarity() + " em " + sim.getTime() + "ms");
-			System.out.println("Similaridade simhash: " + simHash.similarity() + " em " + simHash.getTime() + "ms");
+			BaseSimilarityAlgorithm ssdeep = new SsdeepAlgoritm(args[0], args[1]);
+			System.out.println("Similaridade LCS: " + sim.similarity() + " em " + sim.getTime() + "ms.");
+			System.out.println("Similaridade simhash: " + simHash.similarity() + " em " + simHash.getTime() + "ms.");
+			System.out.println("Similaridade ssdeep: " + ssdeep.similarity() + " em " + ssdeep.getTime() + "ms.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
